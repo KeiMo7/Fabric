@@ -146,6 +146,7 @@
   "command_completed_successfully": "Commande terminée avec succès",
   "compression_level_jpeg_webp": "Niveau de compression 0-100 pour les formats JPEG/WebP (par défaut : non défini)",
   "config_file_not_found": "fichier de configuration non trouvé : %s",
+  "context_budget_flag_help": "Before sending, reserve output room and trim history/input to the model context window instead of letting the provider reject or silently truncate the request",
   "convert_html_readability": "Convertir l'entrée HTML en vue propre et lisible",
   "copilot_debug_created_conversation": "Conversation Copilot créée: %s",
   "copilot_debug_failed_parse_sse_event": "Échec de l'analyse de l'événement SSE: %v",
@@ -817,5 +818,11 @@
   "youtube_ytdlp_required_visual_extraction": "yt-dlp est requis pour l’extraction visuelle mais est introuvable dans PATH",
   "youtube_ytdlp_stderr_error": "erreur lors de la lecture du stderr de yt-dlp",
   "search_not_configured": "%s n'est pas configuré, veuillez exécuter la procédure de configuration",
-  "parallel_search_help": "Rechercher sur le Web à l'aide de Parallel (anonyme par défaut) et renvoyer des extraits sources"
+  "parallel_search_help": "Rechercher sur le Web à l'aide de Parallel (anonyme par défaut) et renvoyer des extraits sources",
+  "context_budget_error_exceeded": "request exceeds the context budget: window=%d tokens, input budget=%d, estimated input=%d (overflow by %d tokens after dropping %d tool/history units). Shorten the input or the system instructions and try again",
+  "context_budget_error_invalid_config": "invalid context budget configuration: %s=%d is not allowed; expected a positive value (or 0 for the default)",
+  "context_budget_notice_dropped": "[context budget] dropped %d history message(s), including %d tool call/result pair(s)",
+  "context_budget_notice_images_dropped": "[context budget] removed %d image part(s) to fit the context window",
+  "context_budget_notice_input_truncated": "[context budget] current input truncated to fit %d tokens; the cut is marked in the message",
+  "context_budget_notice_unknown_window": "[context budget] model context window unknown; using conservative default of %d tokens and reserving an output quota"
 }

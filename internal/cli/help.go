@@ -109,6 +109,7 @@ var flagDescriptionMap = map[string]string{
 	"notification-command":       "custom_notification_command",
 	"thinking":                   "set_reasoning_thinking_level",
 	"show-metadata":              "print_metadata_to_stderr",
+	"context-budget":             "context_budget_flag_help",
 	"debug":                      "set_debug_level",
 }
 

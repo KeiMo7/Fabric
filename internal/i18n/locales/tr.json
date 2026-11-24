@@ -146,6 +146,7 @@
   "command_completed_successfully": "Komut başarıyla tamamlandı",
   "compression_level_jpeg_webp": "JPEG/WebP biçimleri için sıkıştırma seviyesi 0-100 (varsayılan: ayarlanmadı)",
   "config_file_not_found": "yapılandırma dosyası bulunamadı: %s",
+  "context_budget_flag_help": "Before sending, reserve output room and trim history/input to the model context window instead of letting the provider reject or silently truncate the request",
   "convert_html_readability": "HTML girdisini temiz, okunabilir bir görünüme dönüştür",
   "copilot_debug_created_conversation": "Copilot konuşması oluşturuldu: %s",
   "copilot_debug_failed_parse_sse_event": "SSE olayı ayrıştırılamadı: %v",
@@ -817,5 +818,11 @@
   "youtube_ytdlp_required_visual_extraction": "görsel çıkarma için yt-dlp gerekli ancak PATH'te bulunamadı",
   "youtube_ytdlp_stderr_error": "yt-dlp stderr okunurken hata oluştu",
   "search_not_configured": "%s yapılandırılmadı, lütfen kurulum yordamını çalıştırın",
-  "parallel_search_help": "Parallel kullanarak web'de arama yapın (varsayılan olarak anonim) ve kaynak alıntılarını döndürün"
+  "parallel_search_help": "Parallel kullanarak web'de arama yapın (varsayılan olarak anonim) ve kaynak alıntılarını döndürün",
+  "context_budget_error_exceeded": "request exceeds the context budget: window=%d tokens, input budget=%d, estimated input=%d (overflow by %d tokens after dropping %d tool/history units). Shorten the input or the system instructions and try again",
+  "context_budget_error_invalid_config": "invalid context budget configuration: %s=%d is not allowed; expected a positive value (or 0 for the default)",
+  "context_budget_notice_dropped": "[context budget] dropped %d history message(s), including %d tool call/result pair(s)",
+  "context_budget_notice_images_dropped": "[context budget] removed %d image part(s) to fit the context window",
+  "context_budget_notice_input_truncated": "[context budget] current input truncated to fit %d tokens; the cut is marked in the message",
+  "context_budget_notice_unknown_window": "[context budget] model context window unknown; using conservative default of %d tokens and reserving an output quota"
 }

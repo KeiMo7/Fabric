@@ -146,6 +146,7 @@
   "command_completed_successfully": "دستور با موفقیت تکمیل شد",
   "compression_level_jpeg_webp": "سطح فشرده‌سازی 0-100 برای فرمت‌های JPEG/WebP (پیش‌فرض: تنظیم نشده)",
   "config_file_not_found": "فایل پیکربندی یافت نشد: %s",
+  "context_budget_flag_help": "Before sending, reserve output room and trim history/input to the model context window instead of letting the provider reject or silently truncate the request",
   "convert_html_readability": "تبدیل ورودی HTML به نمای تمیز و خوانا",
   "copilot_debug_created_conversation": "مکالمه Copilot ایجاد شد: %s",
   "copilot_debug_failed_parse_sse_event": "تجزیه رویداد SSE ناموفق بود: %v",
@@ -817,5 +818,11 @@
   "youtube_ytdlp_required_visual_extraction": "برای استخراج بصری به yt-dlp نیاز است اما در PATH پیدا نشد",
   "youtube_ytdlp_stderr_error": "خطا در خواندن stderr yt-dlp",
   "search_not_configured": "%s پیکربندی نشده است، لطفاً روش تنظیم را اجرا کنید",
-  "parallel_search_help": "جستجو در وب با استفاده از Parallel (به طور پیش‌فرض ناشناس) و بازگرداندن گزیده‌های منبع"
+  "parallel_search_help": "جستجو در وب با استفاده از Parallel (به طور پیش‌فرض ناشناس) و بازگرداندن گزیده‌های منبع",
+  "context_budget_error_exceeded": "request exceeds the context budget: window=%d tokens, input budget=%d, estimated input=%d (overflow by %d tokens after dropping %d tool/history units). Shorten the input or the system instructions and try again",
+  "context_budget_error_invalid_config": "invalid context budget configuration: %s=%d is not allowed; expected a positive value (or 0 for the default)",
+  "context_budget_notice_dropped": "[context budget] dropped %d history message(s), including %d tool call/result pair(s)",
+  "context_budget_notice_images_dropped": "[context budget] removed %d image part(s) to fit the context window",
+  "context_budget_notice_input_truncated": "[context budget] current input truncated to fit %d tokens; the cut is marked in the message",
+  "context_budget_notice_unknown_window": "[context budget] model context window unknown; using conservative default of %d tokens and reserving an output quota"
 }

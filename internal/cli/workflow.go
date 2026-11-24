@@ -147,6 +147,7 @@ func runWorkflow(
 			vendor, stream, flags.DryRun); err != nil {
 			return "", stepErr(err)
 		}
+		chatter.SetContextBudget(chatOptions.ContextBudget)
 
 		// With --input-has-vars, replace the variables only in text from the
 		// user: the first step input and each input in the workflow file. The

@@ -132,6 +132,7 @@ func (h *ChatHandler) HandleChat(c *gin.Context) {
 					sendErrChan <- err
 					return
 				}
+				chatter.SetContextBudget(request.ContextBudget)
 
 				chatReq := buildPromptChatRequest(p, request.Language)
 
@@ -146,6 +147,11 @@ func (h *ChatHandler) HandleChat(c *gin.Context) {
 					SearchLocation:   request.SearchLocation,
 					UpdateChan:       streamChan,
 					Quiet:            true,
+					// Opt-in only: requests that do not set contextBudget keep
+					// the historical byte-for-byte forwarding behavior.
+					ContextBudget:      request.ContextBudget,
+					MaxTokens:          request.MaxTokens,
+					ModelContextLength: request.ModelContextLength,
 				}
 
 				_, err = chatter.Send(c.Request.Context(), chatReq, opts)

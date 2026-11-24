@@ -146,6 +146,7 @@
   "command_completed_successfully": "Comando concluído com sucesso",
   "compression_level_jpeg_webp": "Nível de compressão 0-100 para formatos JPEG/WebP (por omissão: não definido)",
   "config_file_not_found": "ficheiro de configuração não encontrado: %s",
+  "context_budget_flag_help": "Before sending, reserve output room and trim history/input to the model context window instead of letting the provider reject or silently truncate the request",
   "convert_html_readability": "Converter entrada HTML numa visualização limpa e legível",
   "copilot_debug_created_conversation": "Conversa do Copilot criada: %s",
   "copilot_debug_failed_parse_sse_event": "Falha ao analisar evento SSE: %v",
@@ -817,5 +818,11 @@
   "youtube_ytdlp_required_visual_extraction": "yt-dlp é necessário para extração visual, mas não foi encontrado no PATH",
   "youtube_ytdlp_stderr_error": "erro ao ler stderr do yt-dlp",
   "search_not_configured": "%s não está configurado, execute o procedimento de configuração",
-  "parallel_search_help": "Pesquise a web usando Parallel (anónimo por padrão) e retorne trechos de fonte"
+  "parallel_search_help": "Pesquise a web usando Parallel (anónimo por padrão) e retorne trechos de fonte",
+  "context_budget_error_exceeded": "request exceeds the context budget: window=%d tokens, input budget=%d, estimated input=%d (overflow by %d tokens after dropping %d tool/history units). Shorten the input or the system instructions and try again",
+  "context_budget_error_invalid_config": "invalid context budget configuration: %s=%d is not allowed; expected a positive value (or 0 for the default)",
+  "context_budget_notice_dropped": "[context budget] dropped %d history message(s), including %d tool call/result pair(s)",
+  "context_budget_notice_images_dropped": "[context budget] removed %d image part(s) to fit the context window",
+  "context_budget_notice_input_truncated": "[context budget] current input truncated to fit %d tokens; the cut is marked in the message",
+  "context_budget_notice_unknown_window": "[context budget] model context window unknown; using conservative default of %d tokens and reserving an output quota"
 }

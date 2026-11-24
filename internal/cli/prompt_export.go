@@ -81,5 +81,17 @@ func renderPromptExport(
 		return "", err
 	}
 
-	return chatfmt.FormatMessages(session.GetVendorMessages()), nil
+	messages := session.GetVendorMessages()
+	if flagsCopy.ContextBudget {
+		chatter.SetContextBudget(true)
+		chatOptions, optsErr := flagsCopy.BuildChatOptions()
+		if optsErr != nil {
+			return "", optsErr
+		}
+		if messages, err = chatter.ApplyContextBudgetForExport(messages, chatOptions); err != nil {
+			return "", err
+		}
+	}
+
+	return chatfmt.FormatMessages(messages), nil
 }

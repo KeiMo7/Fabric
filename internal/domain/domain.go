@@ -26,16 +26,20 @@ type ChatRequest struct {
 }
 
 type ChatOptions struct {
-	Model               string
-	Temperature         float64
-	TopP                float64
-	PresencePenalty     float64
-	FrequencyPenalty    float64
-	Raw                 bool
-	Seed                int
-	Thinking            ThinkingLevel
-	ModelContextLength  int
-	MaxTokens           int
+	Model              string
+	Temperature        float64
+	TopP               float64
+	PresencePenalty    float64
+	FrequencyPenalty   float64
+	Raw                bool
+	Seed               int
+	Thinking           ThinkingLevel
+	ModelContextLength int
+	MaxTokens          int
+	// ContextBudget enables the pre-send budget pass that trims the sending
+	// copy to the context window. Default false keeps the historical behavior
+	// of forwarding the assembled messages unchanged.
+	ContextBudget       bool
 	Search              bool
 	SearchLocation      string
 	ImageFile           string

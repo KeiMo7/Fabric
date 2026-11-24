@@ -122,6 +122,7 @@ type Flags struct {
 	NotificationCommand             string               `long:"notification-command" yaml:"notificationCommand" description:"Custom command to run for notifications (overrides built-in notifications)"`
 	Thinking                        domain.ThinkingLevel `long:"thinking" yaml:"thinking" description:"Set reasoning/thinking level (e.g., off, low, medium, high, or numeric tokens for Anthropic or Google Gemini)"`
 	ShowMetadata                    bool                 `long:"show-metadata" description:"Print metadata (input/output tokens) to stderr"`
+	ContextBudget                   bool                 `long:"context-budget" yaml:"contextBudget" description:"Before sending, reserve output room and trim history/input to the model context window instead of letting the provider reject or silently truncate the request"`
 	Debug                           int                  `long:"debug" description:"Set debug level (0=off, 1=basic, 2=detailed, 3=trace, 4=wire)" default:"0"`
 	patternFromBinary               bool                 // Init sets this when the pattern name comes from the binary name.
 }
@@ -429,6 +430,7 @@ func (o *Flags) BuildChatOptions() (ret *domain.ChatOptions, err error) {
 		Thinking:            o.Thinking,
 		ModelContextLength:  o.ModelContextLength,
 		MaxTokens:           o.MaxTokens,
+		ContextBudget:       o.ContextBudget,
 		Search:              o.Search,
 		SearchLocation:      o.SearchLocation,
 		ImageFile:           o.ImageFile,

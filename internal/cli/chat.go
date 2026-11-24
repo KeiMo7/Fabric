@@ -28,6 +28,7 @@ func handleChatProcessing(currentFlags *Flags, registry *core.PluginRegistry, me
 		currentFlags.Vendor, currentFlags.Stream, currentFlags.DryRun); err != nil {
 		return
 	}
+	chatter.SetContextBudget(currentFlags.ContextBudget)
 
 	var session *fsdb.Session
 	var chatReq *domain.ChatRequest

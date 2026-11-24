@@ -146,6 +146,7 @@
   "command_completed_successfully": "اكتمل الأمر بنجاح",
   "compression_level_jpeg_webp": "مستوى الضغط 0-100 لتنسيقات JPEG/WebP (الافتراضي: غير محدد)",
   "config_file_not_found": "ملف التكوين غير موجود: %s",
+  "context_budget_flag_help": "Before sending, reserve output room and trim history/input to the model context window instead of letting the provider reject or silently truncate the request",
   "convert_html_readability": "تحويل مدخلات HTML إلى عرض نظيف وسهل القراءة",
   "copilot_debug_created_conversation": "تم إنشاء محادثة Copilot: %s",
   "copilot_debug_failed_parse_sse_event": "فشل تحليل حدث SSE: %v",
@@ -817,5 +818,11 @@
   "youtube_ytdlp_required_visual_extraction": "yt-dlp مطلوب للاستخراج المرئي ولكنه غير موجود في PATH",
   "youtube_ytdlp_stderr_error": "خطأ في قراءة stderr الخاص بـ yt-dlp",
   "search_not_configured": "%s غير مكون، يرجى تشغيل إجراء الإعداد",
-  "parallel_search_help": "البحث عن الويب باستخدام Parallel (مجاني بشكل افتراضي) وإرجاع مقتطفات المصدر"
+  "parallel_search_help": "البحث عن الويب باستخدام Parallel (مجاني بشكل افتراضي) وإرجاع مقتطفات المصدر",
+  "context_budget_error_exceeded": "request exceeds the context budget: window=%d tokens, input budget=%d, estimated input=%d (overflow by %d tokens after dropping %d tool/history units). Shorten the input or the system instructions and try again",
+  "context_budget_error_invalid_config": "invalid context budget configuration: %s=%d is not allowed; expected a positive value (or 0 for the default)",
+  "context_budget_notice_dropped": "[context budget] dropped %d history message(s), including %d tool call/result pair(s)",
+  "context_budget_notice_images_dropped": "[context budget] removed %d image part(s) to fit the context window",
+  "context_budget_notice_input_truncated": "[context budget] current input truncated to fit %d tokens; the cut is marked in the message",
+  "context_budget_notice_unknown_window": "[context budget] model context window unknown; using conservative default of %d tokens and reserving an output quota"
 }
